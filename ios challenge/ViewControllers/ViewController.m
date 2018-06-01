@@ -30,15 +30,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = [UIColor blackColor];
-    CGRect frame = CGRectMake (self.view.frame.size.width/2, self.view.frame.size.height/2, 80, 80);
-    self.activity = [[UIActivityIndicatorView alloc] initWithFrame:frame];
-    [self.view insertSubview:self.activity aboveSubview:self.userTableView];
 
+
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    
+    self.view.backgroundColor = [UIColor blackColor];
+    CGRect frame = CGRectMake (self.view.frame.size.width/2, self.view.frame.size.height/2, 24, 24);
+    self.activity = [[UIActivityIndicatorView alloc] initWithFrame:frame];
+    self.activity.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    [self.view addSubview:self.activity];
+    [self.activity startAnimating];
     
     [self downloadUserData];
     self.userTableView.delegate = self;
@@ -52,7 +57,6 @@
     self.appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     
     [[NetworkClient sharedInstance] getUserdataWithSuccess:^(NSArray * arrResponse) {
-        [self.activity performSelectorOnMainThread:@selector(startAnimating) withObject:nil waitUntilDone:NO];
 
         for (NSDictionary *dic in arrResponse) {
             User *user = [[User alloc] initWithDic:dic];
