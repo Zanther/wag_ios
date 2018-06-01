@@ -24,8 +24,6 @@
 
 -(void)updateWithDic:(NSDictionary *)dicUser
 {
-    AppDelegate * appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-
     self.display_name = [self checkNullValue: [dicUser valueForKey: @"display_name"]];
     self.location = [self checkNullValue: [dicUser valueForKey: @"location"]];
     self.reputation = [[self checkNullValue: [dicUser valueForKey: @"reputation"]] stringValue];
@@ -33,9 +31,8 @@
     self.account_id = [[self checkNullValue: [dicUser valueForKey: @"account_id"]]stringValue];
     self.profile_image_url = [self checkNullValue: [dicUser valueForKey: @"profile_image"]];
     
-    if (appDelegate.hasInternet) {
+
     [self saveImagesInLocalDirectory:self.profile_image_url :self.account_id];
-    }
 }
 
 -(void)saveImagesInLocalDirectory: (NSString *)urlString :(NSString*)imageName
