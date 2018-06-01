@@ -16,6 +16,9 @@
 		986AEAF020C09718003CBB3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 986AEAEF20C09718003CBB3B /* main.m */; };
 		986AEAFA20C09718003CBB3B /* ios_challengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 986AEAF920C09718003CBB3B /* ios_challengeTests.m */; };
 		986AEB0520C09718003CBB3B /* ios_challengeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 986AEB0420C09718003CBB3B /* ios_challengeUITests.m */; };
+		986AEB1420C09784003CBB3B /* NetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 986AEB1320C09784003CBB3B /* NetworkClient.m */; };
+		986AEB1820C09C02003CBB3B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 986AEB1720C09C02003CBB3B /* User.m */; };
+		986AEB1B20C18556003CBB3B /* UserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 986AEB1A20C18556003CBB3B /* UserCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,13 @@
 		986AEB0020C09718003CBB3B /* ios challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		986AEB0420C09718003CBB3B /* ios_challengeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ios_challengeUITests.m; sourceTree = "<group>"; };
 		986AEB0620C09718003CBB3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		986AEB1220C09784003CBB3B /* NetworkClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkClient.h; sourceTree = "<group>"; };
+		986AEB1320C09784003CBB3B /* NetworkClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkClient.m; sourceTree = "<group>"; };
+		986AEB1520C09AF6003CBB3B /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		986AEB1620C09C02003CBB3B /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		986AEB1720C09C02003CBB3B /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		986AEB1920C18556003CBB3B /* UserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCell.h; sourceTree = "<group>"; };
+		986AEB1A20C18556003CBB3B /* UserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +115,9 @@
 			children = (
 				986AEADD20C09716003CBB3B /* AppDelegate.h */,
 				986AEADE20C09716003CBB3B /* AppDelegate.m */,
-				986AEAE020C09716003CBB3B /* ViewController.h */,
-				986AEAE120C09716003CBB3B /* ViewController.m */,
+				986AEB1E20C1B72B003CBB3B /* ViewControllers */,
+				986AEB1C20C1B706003CBB3B /* Helpers */,
+				986AEB1D20C1B71D003CBB3B /* Model */,
 				986AEAE320C09716003CBB3B /* Main.storyboard */,
 				986AEAE920C09718003CBB3B /* Assets.xcassets */,
 				986AEAEB20C09718003CBB3B /* LaunchScreen.storyboard */,
@@ -133,6 +144,36 @@
 				986AEB0620C09718003CBB3B /* Info.plist */,
 			);
 			path = "ios challengeUITests";
+			sourceTree = "<group>";
+		};
+		986AEB1C20C1B706003CBB3B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				986AEB1520C09AF6003CBB3B /* Constants.h */,
+				986AEB1920C18556003CBB3B /* UserCell.h */,
+				986AEB1A20C18556003CBB3B /* UserCell.m */,
+				986AEB1220C09784003CBB3B /* NetworkClient.h */,
+				986AEB1320C09784003CBB3B /* NetworkClient.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		986AEB1D20C1B71D003CBB3B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				986AEB1620C09C02003CBB3B /* User.h */,
+				986AEB1720C09C02003CBB3B /* User.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		986AEB1E20C1B72B003CBB3B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				986AEAE020C09716003CBB3B /* ViewController.h */,
+				986AEAE120C09716003CBB3B /* ViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,9 +305,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				986AEB1420C09784003CBB3B /* NetworkClient.m in Sources */,
 				986AEAE220C09716003CBB3B /* ViewController.m in Sources */,
+				986AEB1820C09C02003CBB3B /* User.m in Sources */,
 				986AEAE820C09716003CBB3B /* ios_challenge.xcdatamodeld in Sources */,
 				986AEAF020C09718003CBB3B /* main.m in Sources */,
+				986AEB1B20C18556003CBB3B /* UserCell.m in Sources */,
 				986AEADF20C09716003CBB3B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

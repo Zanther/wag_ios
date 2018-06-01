@@ -6,16 +6,30 @@
 //
 
 #import "AppDelegate.h"
+#import "User.h"
+#import "NetworkClient.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+@synthesize arrUsers, hasInternet;
+
+- (void)initGlobalData
+{
+    
+    arrUsers = [[NSMutableArray alloc] init];
+    
+    
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self initGlobalData];
+    
     return YES;
 }
 
